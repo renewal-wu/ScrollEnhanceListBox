@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="ScrollEnhancedListBox.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScrollEnhancedListBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customControl="using:CustomControl"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+    <Page.BottomAppBar>
+        <CommandBar Background="#00AED8">
+            <AppBarButton Icon="Accept"></AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <customControl:ScrollEnhancedListBox x:Name="testListBox">
+            <Grid Background="#FF00AED8" Height="160">
+                <TextBlock Text="Welcome to KKBOX" FontSize="36" Foreground="Black"></TextBlock>
+            </Grid>
+            <customControl:ScrollEnhancedListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="Gray" Width="480">
+                        <TextBlock Text="{Binding}" Foreground="Yellow"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </customControl:ScrollEnhancedListBox.ItemTemplate>
+        </customControl:ScrollEnhancedListBox>
+    </Grid>
+</Page>
